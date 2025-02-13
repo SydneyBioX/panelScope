@@ -2,9 +2,9 @@
 
 Multi-view gene panel characterization for spatially resolved omics
 
-![](https://github.com/Wenze18/IMPACT/blob/main/IMPACT.png)
-
+![](https://github.com/SydneyBioX/panelScope/blob/main/figure1.png)
 We present panelScope, a framework based on a diverse collection of metrics to characterize a gene panel, allowing researchers to determine whether a panel is well-suited to their study’s objectives. We demonstrate the utility of panelScope by generating multiple-views of gene panels that describe their ability to capture cell types of interest, enrichment for biological pathways, or the amount of redundant information. In parallel, we leverage these metrics as loss functions in a genetic algorithm for panel design, where users can choose to weight each characterization category. Importantly, we have implemented this framework in an interactive web platform, which includes a library of pre-existing gene panels that users can compare to their own gene panels. Thus, by quantitatively summarizing a panel from multiple views, panelScope enables the design of panels that can capture diverse information relevant to one’s specific research questions. 
+
 
 
 ## Table of Contents
@@ -37,6 +37,8 @@ There are two main parts implemented within panelScope, the metrics-computation 
 The metrics-computation part is written by R, which describes numerical properties of a selected gene panel based on provided single cell dataset.
 
 The optimization part is written by Python using an efficient version of evolution algorithm. As shown in the following figure, an iterative optimization process containing 4 steps is evolved. At the initialization step, a number of gene panels (default as 50) are randomly selected from the input dataset as initial population. Then, an evaluation-selection-generation loop would be repeated for a number of times (default as 5000). We use scoring functions related to feature diversity, pathway diversity, panel entropy, spatial specificity and variation recovery as our evaluation metrics. The algorithm would randomly pick better performed gene panels and use them to generate new panels to replace the old, not-well-performed ones.
+
+![](https://github.com/SydneyBioX/panelScope/blob/main/figure2.png)
 
  It has 4 arguements, respectively are:
 
