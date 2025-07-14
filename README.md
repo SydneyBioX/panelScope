@@ -55,7 +55,11 @@ The optimization part is written by Python using an efficient version of evoluti
           could optimize the gene panel by anyone of them. One step further, the users could also define their
           own functions and replace the R codes for more speficial panel selection.
 ~~~
-              
+
+To experience our algorithm, you can try with our demo data by:
+~~~
+python main.py --dataset_path ./demo_hca_10x2.rds --panel_num 100 --search_space_path ./search.json --objmode overall
+~~~
 
 
 
