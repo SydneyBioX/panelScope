@@ -62,8 +62,8 @@ To experience our algorithm, you can try with our demo data by:
 python main.py --dataset_path ./demo_hca_10x2.rds --panel_num 200 --search_space_path ./search.json --objmode overall
 ~~~
 
-All input files are in this repo:\n
---dataset_path: The demo data is random sampling 1000 cells with 1000 genes from HCA (10X) data. HCA (10X) data oringinally has 32,911 genes and 181,775 cells, with 132 cell-types from 24 organs.\n
+All input files are in this repo:<br>
+--dataset_path: The demo data is random sampling 1000 cells with 1000 genes from HCA (10X) data. HCA (10X) data oringinally has 32,911 genes and 181,775 cells, with 132 cell-types from 24 organs.<br>
 --panel_num: 200 is a general panel size for ordinary tasks.\n
 --search_space_path: This is a json file path that indicates which genes should the algoruthm picking from.\n
 ---objmode: means we use all metrics for this demo.\n
