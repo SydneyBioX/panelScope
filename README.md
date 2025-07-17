@@ -56,10 +56,20 @@ The optimization part is written by Python using an efficient version of evoluti
           own functions and replace the R codes for more speficial panel selection.
 ~~~
 
+### Demo
 To experience our algorithm, you can try with our demo data by:
 ~~~
-python main.py --dataset_path ./demo_hca_10x2.rds --panel_num 100 --search_space_path ./search.json --objmode overall
+python main.py --dataset_path ./demo_hca_10x2.rds --panel_num 200 --search_space_path ./search.json --objmode overall
 ~~~
+
+All input files are in this repo:
+--dataset_path: The demo data is random sampling 1000 cells with 1000 genes from HCA (10X) data. HCA (10X) data oringinally has 32,911 genes and 181,775 cells, with 132 cell-types from 24 organs.
+--panel_num: 200 is a general panel size for ordinary tasks.
+--search_space_path: This is a json file path that indicates which genes should the algoruthm picking from.
+---objmode: means we use all metrics for this demo.
+
+After searching, you will get some result panel files like demo_result.txt in this repo.
+In the final result file, each line represents a gene.
 
 
 
