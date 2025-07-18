@@ -57,19 +57,25 @@ The optimization part is written by Python using an efficient version of evoluti
 ~~~
 
 ### Demo
-To experience our algorithm, you can try with our demo data by:
+We provide an example using subsampled data from the [Human Cell Atlas (HCA)](https://www.science.org/doi/10.1126/science.abl4896).<br>
+In this demo we automatically design a 200-gene panel with panelScope-OA. The algorithm chooses genes by maximising multiple criteria, which can be customised with the --objmode argument. When panelScope-OA finishes, the selected genes are written to a .txt file—one gene per line.<br>
+After sucessful installation (please check Installation section above), use following line command to conduct our algorithm:
 ~~~
 python main.py --dataset_path ./demo_hca_10x2.rds --panel_num 200 --search_space_path ./search.json --objmode overall
 ~~~
+Input files (all included in this repository):<br>
+~~~
+--dataset_path: demo_hca_10x2.rds is a random subsample of 1 000 cells × 1 000 genes from the HCA, provided for computational efficiency. This should be a Seurat object save in .rds format.
+--panel_num: Number of genes to select (here 200). An integer.
+--search_space_path: search.json lists the 1,000 candidate genes from which the panel will be chosen. A json file.
+--objmode: Optimisation mode. We use overall, which applies all characterisation criteria defined in our framework. Other modes can be specified to emphasise specific objectives.
+~~~
+Feel free to adjust --panel_num, edit the search-space JSON, or choose a different --objmode setting to tailor the panel design to your own data and priorities.
+ 
 
-All input files are in this repo:<br>
---dataset_path: The demo data is random sampling 1000 cells with 1000 genes from HCA (10X) data. HCA (10X) data oringinally has 32,911 genes and 181,775 cells, with 132 cell-types from 24 organs.<br>
---panel_num: 200 is a general panel size for ordinary tasks.<br>
---search_space_path: This is a json file path that indicates which genes should the algoruthm picking from.<br>
---objmode: means we use all metrics for this demo.<br>
 
-After searching, you will get some result panel files like demo_result.txt in this repo.<br>
-In the final result file, each line represents a gene.<br>
+
+
 
 
 
