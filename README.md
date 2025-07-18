@@ -63,6 +63,7 @@ After sucessful installation (please check Installation section above), use foll
 ~~~
 python main.py --dataset_path ./demo_hca_10x2.rds --panel_num 200 --search_space_path ./search.json --objmode overall
 ~~~
+<br>
 Input files (all included in this repository):<br>
 ~~~
 --dataset_path: demo_hca_10x2.rds is a random subsample of 1 000 cells × 1 000 genes from the HCA, provided for computational efficiency. This should be a Seurat object save in .rds format.
@@ -71,6 +72,11 @@ Input files (all included in this repository):<br>
 --objmode: Optimisation mode. We use overall, which applies all characterisation criteria defined in our framework. Other modes can be specified to emphasise specific objectives.
 ~~~
 Feel free to adjust --panel_num, edit the search-space JSON, or choose a different --objmode setting to tailor the panel design to your own data and priorities.
+<br>
+Output file (all included in this repository):<br>
+~~~
+demo_result.txt: the selected genes are written to a .txt file—one gene per line
+~~~
  
 
 
